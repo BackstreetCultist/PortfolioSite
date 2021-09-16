@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import '../resources/styles/nav.scss'
+import '../resources/styles/components/nav.scss'
 
 const Nav = () => {
-    return(
+    return (
         <nav>
             <ul id="nav-links">
                 <li id="nav-link-item">

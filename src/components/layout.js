@@ -1,9 +1,9 @@
 import React from 'react'
 import Nav from './nav.js'
 import { useStaticQuery, graphql } from 'gatsby'
-import '../resources/styles/layout.scss'
+import '../resources/styles/components/layout.scss'
 
-const Layout = ({pageTitle, children}) => {
+const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -14,7 +14,7 @@ const Layout = ({pageTitle, children}) => {
         }
     `)
 
-    return(
+    return (
         <div id="container">
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <header id="site-title">{data.site.siteMetadata.title}</header>
