@@ -1,20 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { MDXRenderer } from 'gatsby-plugin-mdx' 
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
+import '../../resources/styles/pages/blog/{mdx.slug}.scss'
 
 //data prop stores query result (see below)
 const BlogPost = ({ data }) => {
-    const image = getImage(data.mdx.frontmatter.hero_image)
+    const image = <img
+        id="heroimage"
+        alt="{data.mdx.frontmatter.hero_image_alt}"
+        src={data.mdx.frontmatter.hero_image} />
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
             <p>{data.mdx.frontmatter.datePublished}</p>
-            <GatsbyImage
-                image={image}
-                alt={data.mdx.frontmatter.hero_image_alt}
-            />
+            {image}
             <MDXRenderer>
                 {data.mdx.body}
             </MDXRenderer>
@@ -30,13 +30,7 @@ export const query = graphql`
                 title
                 datePublished(formatString: "DD/MM/YYYY")
                 hero_image_alt
-                hero_image_credit_link
-                hero_image_credit_text
-                hero_image {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
+                hero_image
             }
             body
         }
