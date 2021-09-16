@@ -1,0 +1,4 @@
+#Standard Gatsby ignores
+node_modules/
+.cache/
+public/
