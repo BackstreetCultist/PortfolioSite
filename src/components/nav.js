@@ -21,6 +21,11 @@ const Nav = () => {
                         Blog
                     </Link>
                 </li>
+                <li id="nav-link-item">
+                    <Link to="/portfolio" id="nav-link-text">
+                        Portfolio
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
