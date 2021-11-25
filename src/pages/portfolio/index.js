@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
 const description = <p>Here you'll find write-ups of some of the many projects I've worked on</p>
 
@@ -11,7 +11,7 @@ const PortfolioPage = ({ data }) => {
             data.allMdx.nodes.map(node => (
                 <article key={node.id}>
                     <h2>
-                        <Link to={`/blog/${node.slug}`}>
+                        <Link to={`/portfolio/${node.slug}`}>
                             {node.frontmatter.title}
                         </Link>
                     </h2>
