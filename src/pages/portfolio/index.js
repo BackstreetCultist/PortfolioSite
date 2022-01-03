@@ -7,19 +7,19 @@ const description = <p>Here you'll find write-ups of some of the many projects I
 const PortfolioPage = ({ data }) => {
     return (
         <Layout pageTitle="Portfolio Home" children={description}>
-        {
-            data.allMdx.nodes.map(node => (
-                <article key={node.id}>
-                    <h2>
-                        <Link to={`/portfolio/${node.slug}`}>
-                            {node.frontmatter.title}
-                        </Link>
-                    </h2>
-                    <p>Posted: {node.frontmatter.datePublished}</p>
-                    <p>{node.frontmatter.author}</p>
-                </article>
-            ))
-        }
+            {
+                data.allMdx.nodes.map(node => (
+                    <article key={node.id}>
+                        <h2>
+                            <Link to={`/portfolio/${node.slug}`}>
+                                {node.frontmatter.title}
+                            </Link>
+                        </h2>
+                        <h3>{node.frontmatter.description}</h3>
+                        <p>Posted: {node.frontmatter.datePublished}</p>
+                    </article>
+                ))
+            }
         </Layout>
     )
 }
@@ -33,6 +33,7 @@ export const query = graphql`
                     author
                     datePublished(formatString: "DD/MM/YYYY")
                     title
+                    description
                 }
                 id
                 slug
