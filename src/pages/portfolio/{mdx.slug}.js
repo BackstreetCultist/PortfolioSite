@@ -21,8 +21,10 @@ const PortfolioPost = ({ data }) => {
             <Layout pageTitle={data.mdx.frontmatter.title}>
                 <p>{data.mdx.frontmatter.datePublished}</p>
                 {/* Override the css in Layout */}
-                <section className={portfolioStyle.container}>
+                <section className={portfolioStyle.heroimage}>
                     {image}
+                </section>
+                <section className={portfolioStyle.textbody}>
                     <MDXRenderer>
                         {data.mdx.body}
                     </MDXRenderer>
