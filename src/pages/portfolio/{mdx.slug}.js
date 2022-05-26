@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
 import NotFoundPage from '../404'
-import * as styles from '../../resources/styles/pages/portfolio/{mdx.slug}.module.scss'
+import * as portfolioStyle from '../../resources/styles/pages/portfolio/{mdx.slug}.module.scss'
 
 //data prop stores query result (see below)
 const PortfolioPost = ({ data }) => {
@@ -14,14 +14,14 @@ const PortfolioPost = ({ data }) => {
     }
     else {
         const image = <img
-            id="heroimage"
             alt={data.mdx.frontmatter.hero_image_alt}
             src={data.mdx.frontmatter.hero_image} />
     
         return (
             <Layout pageTitle={data.mdx.frontmatter.title}>
-                <section className={styles.container}>
-                    <p>{data.mdx.frontmatter.datePublished}</p>
+                <p>{data.mdx.frontmatter.datePublished}</p>
+                {/* Override the css in Layout */}
+                <section className={portfolioStyle.container}>
                     {image}
                     <MDXRenderer>
                         {data.mdx.body}
