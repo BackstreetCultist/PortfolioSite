@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
 import NotFoundPage from '../404'
-import '../../resources/styles/pages/portfolio/{mdx.slug}.scss'
+import * as styles from '../../resources/styles/pages/portfolio/{mdx.slug}.module.scss'
 
 //data prop stores query result (see below)
 const PortfolioPost = ({ data }) => {
@@ -15,16 +15,18 @@ const PortfolioPost = ({ data }) => {
     else {
         const image = <img
             id="heroimage"
-            alt="{data.mdx.frontmatter.hero_image_alt}"
+            alt={data.mdx.frontmatter.hero_image_alt}
             src={data.mdx.frontmatter.hero_image} />
     
         return (
             <Layout pageTitle={data.mdx.frontmatter.title}>
-                <p>{data.mdx.frontmatter.datePublished}</p>
-                {image}
-                <MDXRenderer>
-                    {data.mdx.body}
-                </MDXRenderer>
+                <section className={styles.container}>
+                    <p>{data.mdx.frontmatter.datePublished}</p>
+                    {image}
+                    <MDXRenderer>
+                        {data.mdx.body}
+                    </MDXRenderer>
+                </section>
             </Layout>
         )
 

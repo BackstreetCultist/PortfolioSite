@@ -15,7 +15,7 @@ const BlogPost = ({ data }) => {
     else {
         const image = <img
             id="heroimage"
-            alt="{data.mdx.frontmatter.hero_image_alt}"
+            alt={data.mdx.frontmatter.hero_image_alt}
             src={data.mdx.frontmatter.hero_image} />
 
         return (
