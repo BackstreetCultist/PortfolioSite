@@ -33,6 +33,8 @@ export const query = graphql`
                     datePublished(formatString: "DD/MM/YYYY")
                     title
                     description
+                    hero_image
+                    hero_image_alt
                 }
                 id
                 slug
