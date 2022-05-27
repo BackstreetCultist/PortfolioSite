@@ -11,11 +11,13 @@ const PortfolioBox = ({node}) => {
                         {node.frontmatter.title}
                     </Link>
                 </h2>
-                <img
-                    id="heroimage"
-                    alt={node.frontmatter.hero_image_alt}
-                    src={node.frontmatter.hero_image}
-                />
+                <Link to={`/portfolio/${node.slug}`} className={navLinkItem}>
+                    <img
+                        id="heroimage"
+                        alt={node.frontmatter.hero_image_alt}
+                        src={node.frontmatter.hero_image}
+                    />
+                </Link>
                 <h3>{node.frontmatter.description}</h3>
             </article>
         </section>
