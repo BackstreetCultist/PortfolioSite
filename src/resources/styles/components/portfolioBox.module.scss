@@ -1,0 +1,21 @@
+.portfolioBox {
+    article {
+        font-family:'Courier New', Courier, monospace;
+        flex: 0 0 auto;
+        margin: 2.5%;
+        padding: 1%;
+        background-color: lightgray;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+    h2 {
+        margin-top: 0;
+    }
+    h3 {
+        text-align: start;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+}

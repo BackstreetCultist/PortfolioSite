@@ -1,25 +1,24 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import PortfolioBox from '../../components/portfolioBox'
+import { portfolioIndex } from '../../resources/styles/pages/portfolio/index.module.scss'
 
 const description = <p>Here you'll find write-ups of some of the many projects I've worked on</p>
 
 const PortfolioPage = ({ data }) => {
     return (
-        <Layout pageTitle="Portfolio Home" children={description}>
-            {
-                data.allMdx.nodes.map(node => (
-                    <article key={node.id}>
-                        <h2>
-                            <Link to={`/portfolio/${node.slug}`}>
-                                {node.frontmatter.title}
-                            </Link>
-                        </h2>
-                        <h3>{node.frontmatter.description}</h3>
-                        <p>Posted: {node.frontmatter.datePublished}</p>
-                    </article>
-                ))
-            }
+        <Layout pageTitle="Portfolio Home">
+            {description}
+            <section className={portfolioIndex}>
+                <div>
+                    {
+                    data.allMdx.nodes.map(node => (
+                            <PortfolioBox node={node} />
+                    ))
+                    }
+                </div>
+            </section>
         </Layout>
     )
 }
