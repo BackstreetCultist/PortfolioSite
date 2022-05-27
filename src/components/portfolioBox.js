@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { portfolioBox, navLinkItem, title } from '../resources/styles/components/portfolioBox.module.scss'
+import { portfolioBox, navLinkItem } from '../resources/styles/components/portfolioBox.module.scss'
 
 const PortfolioBox = ({node}) => {
     return (

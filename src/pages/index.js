@@ -1,13 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
-import '../resources/styles/pages/index.scss'
+import { index } from '../resources/styles/pages/index.module.scss'
 
 const description = <p>Lorem ipsum etc</p>
 const image = <img
-  id="welcomeimage"
   alt="A close-up photograph of myself"
   src='https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png' />
-const content = <div>
+const content = <div className={index}>
   {description}
   {image}
 </div>

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
 import NotFoundPage from '../404'
-import '../../resources/styles/pages/blog/{mdx.slug}.scss'
+import { heroimage } from '../../resources/styles/pages/blog/{mdx.slug}.module.scss'
 
 //data prop stores query result (see below)
 const BlogPost = ({ data }) => {
@@ -14,7 +14,7 @@ const BlogPost = ({ data }) => {
     }
     else {
         const image = <img
-            id="heroimage"
+            className={heroimage}
             alt={data.mdx.frontmatter.hero_image_alt}
             src={data.mdx.frontmatter.hero_image} />
 

@@ -1,28 +1,28 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import '../resources/styles/components/nav.scss'
+import { navLinks, navLinkItem, navLinkText } from '../resources/styles/components/nav.module.scss'
 
 const Nav = () => {
     return (
         <nav>
-            <ul id="nav-links">
-                <li id="nav-link-item">
-                    <Link to="/" id="nav-link-text">
+            <ul className={navLinks}>
+                <li className={navLinkItem}>
+                    <Link to="/" className={navLinkItem}>
                         Home
                     </Link>
                 </li>
-                <li id="nav-link-item">
-                    <Link to="/about" id="nav-link-text">
+                <li className={navLinkItem}>
+                    <Link to="/about" className={navLinkItem}>
                         About
                     </Link>
                 </li>
-                <li id="nav-link-item">
-                    <Link to="/blog" id="nav-link-text">
+                <li className={navLinkItem}>
+                    <Link to="/blog" className={navLinkItem}>
                         Blog
                     </Link>
                 </li>
-                <li id="nav-link-item">
-                    <Link to="/portfolio" id="nav-link-text">
+                <li className={navLinkItem}>
+                    <Link to="/portfolio" className={navLinkItem}>
                         Portfolio
                     </Link>
                 </li>
