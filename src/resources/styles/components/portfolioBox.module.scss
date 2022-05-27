@@ -1,4 +1,6 @@
 .portfolio-box {
+    max-width: 30%;
+
     article {
         font-family:'Courier New', Courier, monospace;
         flex: 0 0 auto;
@@ -22,11 +24,12 @@
         position: absolute;
     }
     img {
-        width: 40%;
+        width: 100%;
     }
 }
 
 .nav-link-item {
     color: black;
     text-decoration: none;
+    position: relative;
 }
