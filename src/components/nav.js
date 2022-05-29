@@ -6,22 +6,22 @@ const Nav = () => {
     return (
         <nav>
             <ul className={navLinks}>
-                <li className={navLinkItem}>
+                <li className={navLinkText}>
                     <Link to="/" className={navLinkItem}>
                         Home
                     </Link>
                 </li>
-                <li className={navLinkItem}>
+                <li className={navLinkText}>
                     <Link to="/about" className={navLinkItem}>
                         About
                     </Link>
                 </li>
-                <li className={navLinkItem}>
+                <li className={navLinkText}>
                     <Link to="/blog" className={navLinkItem}>
                         Blog
                     </Link>
                 </li>
-                <li className={navLinkItem}>
+                <li className={navLinkText}>
                     <Link to="/portfolio" className={navLinkItem}>
                         Portfolio
                     </Link>
