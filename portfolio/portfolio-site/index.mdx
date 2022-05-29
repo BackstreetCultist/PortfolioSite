@@ -2,7 +2,7 @@
 title: "GatsbyJS Portfolio Site"
 datePublished: "2022-03-01"
 author: "Charlie Wilkins"
-hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
+hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio-site/portfolio_deployment.png"
 hero_image_alt: "A close-up photograph of myself"
 hero_image_credit_text: "Image owned by me"
 hero_image_credit_link: "charliewilkins.tech"
@@ -27,9 +27,47 @@ as well as to share my thoughts on computing and technology. As such,
 simplicity seemed to be the order of the day.
 
 <img
-src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-alt="A close-up photograph of myself" />
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio-site/portfolio_website_in_development_image.png"
+alt="A close-up photograph of myself" 
+style="width:100%, max-width:480px"
+/>
 
-Constructing the website on my local machine indeed proved relatively simple.
+Constructing the website on my local machine was indeed relatively simple.
 Gatsby proved a joy to work with, well documented and tutorialised, and easy
 even for an inexperienced JavaScript developer like myself.
+
+The website was initially constructed in JavaScript using [SASS](https://sass-lang.com/)
+(Syntactically Awesome Style Sheets), and these SASS components were later
+re-written as Modules (the SASS equivalent to CSS Modules). A future goal of
+the project is to re-write the entire site into TypeScript - a glance around
+the rest of my portfolio will no doubt reveal my love of strictly-typed
+languages!
+
+With the blog developed locally, I then sought a way to deploy it to my domain.
+As an experienced and [certified AWS developer]() [TODO link to a blog post], I
+considered the various options AWS provides in order to create a scalable,
+pay-as-you-go website in as simple a manner as possible.
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio-site/portfolio_deployment.png"
+alt="An image reflecting the four-step process explained below" 
+style="width:100%, max-width:480px"
+/>
+
+I eventually chose AWS Amplify, as it included in-built support for Gatsby
+deployment as well as automatic CI/CD with GitHub. As such, there are four
+steps to the deployment of the site:
+
+1. Website is modified locally. I do my best work on a cannibalised HP laptop running Debian Linux.
+2. Local changes are pushed to remote repository stored on GitHub.
+3. AWS Amplify is notified by GitHub and redeploys site.
+4. Website deployed by AWS and is served to your computer.
+
+Building this portfolio website has been and continues to be an extremely
+rewarding experience. It's by far the largest amount of modern JavaScript I've
+written, and while I still prefer back-end development I've very much enjoyed
+getting to grips with Gatsby, SASS and React. I'm always excited to re-open
+this repository and add a new feature when an idea strikes me.
+
+Repository available [on my public GitHub](https://github.com/BackstreetCultist/PortfolioSite).
+Logos used property of their rightful owners, clip-art sourced from [https://publicdomainvectors.org/](https://publicdomainvectors.org/).
