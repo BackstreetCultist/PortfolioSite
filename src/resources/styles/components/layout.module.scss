@@ -1,7 +1,17 @@
+.background {
+    background-color: lightgrey;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 .container {
     margin: auto;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 960px;
+    min-height: 100vh;
+    background-color: white;
     font-family: sans-serif;
 }
 .heading {

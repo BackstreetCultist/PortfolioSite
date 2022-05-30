@@ -18,6 +18,7 @@ module.exports = {
         path: `${__dirname}/portfolio`,
       }
     },
-    "gatsby-plugin-mdx"
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-react-helmet"
   ],
 };
