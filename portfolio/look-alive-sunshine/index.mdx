@@ -1,9 +1,9 @@
 ---
 title: "Look Alive, Sunshine"
-datePublished: "2022-05-26"
+datePublished: "2022-03-01"
 author: "Charlie Wilkins"
-hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-hero_image_alt: "A close-up photograph of myself"
+hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/look-alive-sunshine/sunshine.png"
+hero_image_alt: "Our home-made coffee machine, Sunshine"
 hero_image_credit_text: "Image owned by me"
 hero_image_credit_link: "charliewilkins.tech"
 description: "A scary productivity tool"
@@ -11,25 +11,118 @@ description: "A scary productivity tool"
 
 <h2>{_frontmatter.description}</h2>
 
-For my first portfolio entry, I thought I'd take a look at exactly how I built
-and deployed the site you are currently reading. Or, rather, how I build and
-deploy the website, since I frequently update it when I have the idea for a
-new feature or simply want a break from my more typical work as a student and
-back-end developer.
+ManMetHacks 2.0, held January 2020, was a fantastic competition and made for a
+terrific second outing for my hackathon team, loosely termed the Dream Team.
+The only issue was, it took place in Manchester, a long and tiring coach ride
+away for us. By the time hacking started at 12 noon, we were more in a mood to
+go back to bed than to get building. We needed something to keep ourselves
+working, and we figured future hackathon entrants might as well.
 
-As that implies, I don't have a background in web development. As such, I began
-by searching for a web framework that was modern, fast, and easy to get to
-grips with. [GatsbyJS](https://www.gatsbyjs.com/) seemed an obvious choice,
-especially since I anticipated the website containing primarily static content
-such as a blog and portfolio. The primary purpose of the website was to give me
-a space to archive and explain some of the many projects I've been a part of,
-as well as to share my thoughts on computing and technology. As such,
-simplicity seemed to be the order of the day.
+Thus began the building of Look Alive, Sunshine, a rather silly project intended
+to push the boundaries of what can be termed a 'productivity tool'. Constructed
+as an extension for the Visual Studio Code IDE, Look Alive, Sunshine keeps
+developers working by a variety of means, each triggered by a 'threat level'
+that is raised when a time increment passes and the developer does not type.
+For example, if the time limit were set to 10 seconds, then 10 seconds without
+typing would raise the threat level to 1, and a further 10 would raise it to 2.
 
 <img
-src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-alt="A close-up photograph of myself" />
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/look-alive-sunshine/twilio.png"
+alt="The Twilio logo" 
+style="width:100%, max-width:480px"
+/>
 
-Constructing the website on my local machine indeed proved relatively simple.
-Gatsby proved a joy to work with, well documented and tutorialised, and easy
-even for an inexperienced JavaScript developer like myself.
+Each threat level triggered a different action for the system, derived from the
+technology made available by the hackathon's sponsors. The first threat level
+merely alerted the user within their IDE, while the second and third caused
+a text message and a phone call respectively to be sent to the user. This phone
+interface was provided by phone API operator Twilio, who sponsored the
+competition with free credit.
+
+These initial threats were really fun to develop and see in action, particularly
+the phone call which made use of distorted audio to create a genuinely creepy
+effect. However, it was threat levels four and five which really made the
+project what it was. Another sponsor of the project was Google Cloud, and while
+we initially only intended to use this to create a Command & Control server to
+delegate API calls, we quickly became interested in what else it could do.
+It is helpful at this point to look at the overall structure of the Look Alive,
+Sunshine project to see where exactly this technology was used.
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/look-alive-sunshine/architecture.png"
+alt="The architecture of the project" 
+style="width:100%, max-width:480px"
+/>
+
+Threat Level 4 needed to be something dramatic, as clearly directly contacting
+the user has at that point failed to return them to work. It ocurred to us that,
+if the user's computer was on but they were not typing, they were likely doing
+something else with their machine, such as browsing the web. "Wouldn't it be
+great", we thought, "if we were able to shame the user for their distraction?"
+The phrase 'Post their internet history on Twitter' was soon flying around the
+table, and receiving worried looks from other entrants passing by. This did
+little to deter us.
+
+Perhaps thankfully, a user's browser history is not very easy for Google Cloud
+to access directly. Put another, more worrying way, it is very easy to access
+by Google Cloud if the cloud platform is, vampirically, invited. The simplest
+way is to access the history via a Chrome browser extension, so we quickly threw
+together a minimal one that provided the correct access. This along with the
+VS Code extension were thus the "deliverable" that a user would host on their
+machine to actually *use* Look Alive, Sunshine. When polled by the C&C server
+with the relevant Google Account details, the extension was able to return the
+user's most recent Chrome history. It was a simple matter to pass that to a
+Twitter bot, and Threat Level 4 had been created.
+
+At this point, it ocurred to us that, perhaps, Look Alive, Sunshine was all
+stick and no carrot. Threat Level 5, we thought, ought to be something that
+helped rather than terrified a user. And, not content with the amount of work
+we had already planned in for this 24-hour hack (which we were already two
+hours in to and still planning!), we decided it ought to be a coffee machine.
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/look-alive-sunshine/sunshine.png"
+alt="Sunshine, our coffee machine"
+style="width:100%, max-width:480px"
+/>
+
+I'd brought along my Raspberry Pi 4 to use as a server, but we'd ended up using
+Google Cloud instead. It was still a powerful piece of equipment to have access
+to, particularly for its hardware-control capabilities, and between that and a
+small pool of components provided by Major League Hacking we decided we had
+everything we needed for at least a proof-of-concept coffee-maker. The
+construction of this machine was simple - two containers, one of water and one
+of powdered coffee, which dispensed their contents into a third section which
+mixed them by spinning. Unfortunately, this 'spinning' aspect did not come to
+fruition, but the machine still proved its potential. When activated by the
+C&C server at Threat Level 5, the coffee machine (named 'Sunshine') poured its
+contents into a mixing bowl, demonstrating the planned if incomplete operation
+of the device.
+
+This hardware addition to the largely software-based project proved very useful
+for us as, after some debate about how exactly to judge it, Look Alive, Sunshine
+was awarded the Best Hardware Hack prize by the event's judges. 
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/look-alive-sunshine/prize.png"
+alt="Look Alive, Sunshine is awarded the prize for Best Hardware Hack"
+style="width:100%, max-width:480px"
+/>
+
+Naturally, I don't intend to present Look Alive, Sunshine as a genuine
+productivity tool or management solution. Indeed, in a world where monitoring
+tools are increasingly used by managers to measure developers working from home,
+the project feels increasingly like a bizarre satire of corporate software development's worst excesses.
+However it was primarily intended as, and still works best as, a proof of all
+that can be done when a team of skilled developers throws caution to the wind
+and applies all their skills to one simple goal.
+
+I had an absolute blast working on it, and I learned a great deal about everything
+from Node server architectures to hardware. If you're planning on going to any
+hackathons soon (which I recommend!) I'll always say that the best approach is
+the one presented here. Ironically, I did end up having a rather more serious
+development role involving text-messaging systems, but that is a
+[story for another time]() [TODO blog post about Nova Team].
+
+Repository available [on my public GitHub](https://github.com/BackstreetCultist/ManMetHacks2.0Project).
+Logos used property of their rightful owners, clip-art sourced from [https://publicdomainvectors.org/](https://publicdomainvectors.org/).
