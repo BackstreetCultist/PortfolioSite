@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Nav from './nav.js'
 import { useStaticQuery, graphql } from 'gatsby'
-import { background, container, heading, siteTitle} from '../resources/styles/components/layout.module.scss'
+import { background, container, heading, siteTitle, siteSubTitle} from '../resources/styles/components/layout.module.scss'
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -10,6 +10,7 @@ const Layout = ({ pageTitle, children }) => {
             site {
                 siteMetadata {
                     title
+                    subtitle
                 }
             }
         }
@@ -24,6 +25,7 @@ const Layout = ({ pageTitle, children }) => {
             </Helmet>
             <div className={container}>
                 <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+                <h1 className={siteSubTitle}>{data.site.siteMetadata.subtitle}</h1>
                 <Nav></Nav>
                 <main>
                     <h1 className={heading}>{pageTitle}</h1>
