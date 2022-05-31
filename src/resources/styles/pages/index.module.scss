@@ -1,5 +1,14 @@
 .index {
+    display: flex;
+    flex-direction: row;
+    div {
+        width: 47%;
+        margin-top: 0;
+        margin-right: 1%
+    }
     img {
-        width: 95%;
+        width: 47%;
+        margin-top: 0;
+        margin-left: 1%;
     }
 }
