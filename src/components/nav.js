@@ -6,23 +6,23 @@ const Nav = () => {
     return (
         <nav>
             <ul className={navLinks}>
-                <li className={navLinkText}>
-                    <Link to="/" className={navLinkItem}>
+                <li className={navLinkItem}>
+                    <Link to="/" className={navLinkText}>
                         Home
                     </Link>
                 </li>
-                <li className={navLinkText}>
-                    <Link to="/about" className={navLinkItem}>
+                <li className={navLinkItem}>
+                    <Link to="/about" className={navLinkText}>
                         About
                     </Link>
                 </li>
-                <li className={navLinkText}>
-                    <Link to="/blog" className={navLinkItem}>
+                <li className={navLinkItem}>
+                    <Link to="/blog" className={navLinkText}>
                         Blog
                     </Link>
                 </li>
-                <li className={navLinkText}>
-                    <Link to="/portfolio" className={navLinkItem}>
+                <li className={navLinkItem}>
+                    <Link to="/portfolio" className={navLinkText}>
                         Portfolio
                     </Link>
                 </li>
