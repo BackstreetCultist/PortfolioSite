@@ -1,9 +1,9 @@
 ---
 title: "Famous Last Words"
-datePublished: "2022-05-27"
+datePublished: "2022-06-03"
 author: "Charlie Wilkins"
-hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-hero_image_alt: "A close-up photograph of myself"
+hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/famous-last-words/mask.png"
+hero_image_alt: "A cardboard mask with red glowing eyes"
 hero_image_credit_text: "Image owned by me"
 hero_image_credit_link: "charliewilkins.tech"
 description: "A totalitarian auto-moderator"
@@ -11,25 +11,122 @@ description: "A totalitarian auto-moderator"
 
 <h2>{_frontmatter.description}</h2>
 
-For my first portfolio entry, I thought I'd take a look at exactly how I built
-and deployed the site you are currently reading. Or, rather, how I build and
-deploy the website, since I frequently update it when I have the idea for a
-new feature or simply want a break from my more typical work as a student and
-back-end developer.
+The third hackathon for me and my friends in the Dream Team* was CovHack 2020,
+held in February of that year at the University of Coventry. Following the
+success of [Look Alive, Sunshine](https://charliewilkins.tech/portfolio/look-alive-sunshine),
+we hoped to create a similar darkly whimsical, not-to-be-taken-seriously
+project in which a Command & Control cloud server managed a sprawling network
+of components and micro-services. This architecture had proved a winning formula
+as it meant there was always a variety of tasks to complete and team members
+were never "sitting on their hands". This isn't to say that we were resting on
+our laurels, and we decided (based on me and one other team member being [AI specialists]() [TODO LINK])
+that an AI component should this time be included, to increase the complexity
+of the project. We ended up including two.
 
-As that implies, I don't have a background in web development. As such, I began
-by searching for a web framework that was modern, fast, and easy to get to
-grips with. [GatsbyJS](https://www.gatsbyjs.com/) seemed an obvious choice,
-especially since I anticipated the website containing primarily static content
-such as a blog and portfolio. The primary purpose of the website was to give me
-a space to archive and explain some of the many projects I've been a part of,
-as well as to share my thoughts on computing and technology. As such,
-simplicity seemed to be the order of the day.
+The impetus for this project was, as it so often is, an argument. Or rather
+arguments - we were concerned that the amount of, shall we say, 'robust'
+political debates occuring in our local Discord server was creeping up and up.
+Wouldn't it be great if a Discord bot could be relied upon to nix such discussions?
+Wouldn't it be even better if it could use AI to do it? And, more to the point,
+wouldn't it be better still if the very *need* for political debate was removed,
+the bot instead able to dictate a political message to those under its purview?
+Thus was born Famous Last Words, a Discord auto-moderator perfect for a
+totalitarian government.
 
 <img
-src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-alt="A close-up photograph of myself" />
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/famous-last-words/architecture.png"
+alt="The architecture of the project" 
+style="width:100%, max-width:480px"
+/>
 
-Constructing the website on my local machine indeed proved relatively simple.
-Gatsby proved a joy to work with, well documented and tutorialised, and easy
-even for an inexperienced JavaScript developer like myself.
+As I have discussed, Famous Last Words used a variety of services and features
+to bring across its 'message'. At its heart was a Discord bot that was attached
+to a channel in a Discord server. It relayed every message it saw to the Command
+& Control server, once again provided by Google Cloud. Another exciting feature
+of the GC platform is Sentiment Analysis, an AI able to determine the beliefs
+expressed in a string of text. This rather eerie tool would be perfect for
+evaluating users' political beliefs - we simply had to tell it what we were
+listening for. We decided that, for the purposes of demonstrating the project,
+Famous Last Words should be being operated by a totalitarian *vegan* society,
+and thus that the bot would be triggered by expressing a positive opinion
+about meat or meat-eating.
+
+Once triggered, Famous Last Words took two actions. The first occured within the
+Discord server, the other in the physical world. The Discord user who had alerted
+the bot would find themselves moved into a seperate channel and bombarded with
+propaganda posters. This was where the second AI component came in.
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/famous-last-words/poster.png"
+alt="One of the generated propaganda posters, featuring yours truly" 
+style="width:100%, max-width:480px"
+/>
+
+A GPT-3 text processor, fed by the transcription of a long tirade made by a
+militant vegan at a rally and found online, would generate short slogans
+disparaging the eating of meat and aiming to guide the user back towards the
+correct path. These were overlayed onto *politburo*-esque posters featuring a
+variety of team members and other hackathon attendees.
+
+These posters were generated on the C&C server using a python script, before
+being sent back down to the bot to dispatch the user. While the short length of
+the source transcript (and the difficulty in finding anything else similarly
+aggressive) meant the slogans were somewhat repetitive, it was still a very
+effective tool. Paired with the hardware component of the project, it created a
+rather unnerving effect.
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/famous-last-words/mask.png"
+alt="A cardboard mask with red glowing eyes" 
+style="width:100%, max-width:480px"
+/>
+
+Codenamed the "Eye of Sauron" (which is [somewhat eerily prescient]() [TODO LINK]),
+Famous Last Words' hardware component was envisioned as a glowing warning light
+which would threaten the user with the knowledge that their subversive messaging
+had been detected. The initial pitch was, naturally, for one large glowing red
+eye, but we were aware that we would be limited in what we could throw together
+(for all the hardware they provide, Major League Hacking fell short in the
+giant-glowing-eye department). Me and another team member were dispatched to a
+nearby HobbyCraft** to see what we could turn up, and returned with a large
+round wooden box (to contain the hardware) and an expressionless cardboard
+mask, eyes shut, to become the Eye.
+
+Using hot glue and small round trays, translucent eyepieces were made. When a 
+red LED placed behind them was activated, it diffused through the glue to create
+an ominous crimson glow. These were mounted behind the eyes, the eyelids cut open
+and attached on motorised strings that could pull them up into the recesses of
+the mask, revealing the eyes which would then light up. Controlled by my Raspberry
+Pi 4, Sunshine, this created a genuinely nightmarish effect after some tweaking.
+
+<img
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/famous-last-words/mask.gif"
+alt="A gif of the mask's eyes opening and igniting" 
+style="width:100%, max-width:480px"
+/>
+
+As with Look Alive, Sunshine, Famous Last Words was not exactly concieved with
+real-world applications in mind. Having said that, my takeaway from this project
+is to be a little more unnerved - Famous Last Words was almost *too* easy to
+throw together. This is not to disparage the efforts of myself or my team - on
+the contrary, I still believe this is a very impressive project given the 24-hour
+time limit, but that's the thing - if we can throw this together in 24 hours for
+a laugh, how much further could it be taken - *is* it being taken - by malicious
+actors with the backing of entire nation-states?
+
+As impressive as it is, and as fun as it was to work on, I believe Famous Last
+Words perhaps works best as a reminder of the awesome power of the technology
+this community builds, and our responsibility to use it appropriately. That
+being said, I genuinely did greatly enjoy working on it and am extremely proud
+of our team's accomplishments. It impressed the judges too - our server architecture
+and deployment of Sentiment Analysis (which I've never seen deployed by other
+hackathon projects) netted us a Best Use of Google Cloud prize.
+
+
+Repository available [on my public GitHub](https://github.com/BackstreetCultist/FamousLastWords).
+Logos used property of their rightful owners, clip-art sourced from [https://publicdomainvectors.org/](https://publicdomainvectors.org/).
+
+\* Don't expect a write-up of the first
+
+** A chain of UK craft & hobby shops. I can recommend them as an excellent place
+to source obscure components required at hackathons. 
