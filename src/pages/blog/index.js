@@ -24,6 +24,7 @@ export const query = graphql`
                     author
                     datePublished(formatString: "DD/MM/YYYY")
                     title
+                    description
                 }
                 id
                 slug

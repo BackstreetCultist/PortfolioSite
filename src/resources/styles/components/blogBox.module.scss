@@ -1,0 +1,29 @@
+.blog-box {
+    border-style: solid;
+    border-width: 5px;
+    border-color: gray;
+    margin: 1%;
+    h2 {
+        text-align: center;
+        margin-top: 1%; 
+        margin-bottom: 1%;
+    }
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center; 
+    }
+    p {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+.nav-link-item {
+    color: blue;
+    text-decoration: none;
+}
