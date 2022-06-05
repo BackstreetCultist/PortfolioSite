@@ -1,21 +1,14 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import BlogBox from '../../components/blogBox'
 
 const BlogPage = ({ data }) => {
     return (
         <Layout pageTitle="Blog Index">
             {
                 data.allMdx.nodes.map(node => (
-                    <article key={node.id}>
-                        <h2>
-                            <Link to={`/blog/${node.slug}`}>
-                                {node.frontmatter.title}
-                            </Link>
-                        </h2>
-                        <p>Posted: {node.frontmatter.datePublished}</p>
-                        <p>{node.frontmatter.author}</p>
-                    </article>
+                    <BlogBox node={node} />
                 ))
             }
         </Layout>
