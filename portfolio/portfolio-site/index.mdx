@@ -11,6 +11,12 @@ description: "How I built the website you're reading this on!"
 
 <h2>{_frontmatter.description}</h2>
 
+<h3>
+TLDR: A static portfolio & blog, built in GatsbyJS using SASS Modules
+for styling. The site is deployed using AWS Amplify, which is able to fully
+integrate with GitHub for continuous deployment.
+</h3>
+
 For my first portfolio entry, I thought I'd take a look at exactly how I built
 and deployed the site you are currently reading. Or, rather, how I build and
 deploy the website, since I frequently update it when I have the idea for a
@@ -55,7 +61,7 @@ style="width:100%, max-width:480px"
 />
 
 I eventually chose AWS Amplify, as it included in-built support for Gatsby
-deployment as well as automatic CI/CD with GitHub. As such, there are four
+deployment as well as automatic continuous deployment with GitHub. As such, there are four
 steps to the deployment of the site:
 
 1. Website is modified locally. I do my best work on a cannibalised HP laptop running Debian Linux.
