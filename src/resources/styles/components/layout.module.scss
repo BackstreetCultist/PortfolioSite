@@ -1,5 +1,7 @@
+@import '../colors';
+
 .background {
-    background-color: lightgrey;
+    background-color: $lightbluegrey;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -16,12 +18,12 @@
 }
 .site-title {
     font-size: 3rem;
-    color: grey;
+    color: $darkbluegrey;
     font-weight: 700;
     margin: 2% auto 0;
 }
 .site-sub-title{
-    color: grey;
+    color: $darkbluegrey;
     margin: 2% auto 2%;
 }
 .body {

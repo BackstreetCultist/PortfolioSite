@@ -1,3 +1,5 @@
+@import '../colors';
+
 .portfolio-box {
     max-width: 30%;
 
@@ -6,7 +8,7 @@
         flex: 0 0 auto;
         margin: 2.5%;
         padding: 1%;
-        background-color: lightgray;
+        background-color: $lightbluegrey;
     }
     div {
         display: flex;

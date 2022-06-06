@@ -1,3 +1,5 @@
+@import '../../colors';
+
 .heroimage {
     img {
         max-width: 100%;
@@ -14,7 +16,7 @@
         display: block;
     }
     h2 {
-        color: red;
+        color: $darkbluegrey;
     }
     h3 {
         width: 90%;
