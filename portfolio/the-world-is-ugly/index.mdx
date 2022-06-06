@@ -1,35 +1,77 @@
 ---
 title: "The World is Ugly"
-datePublished: "2022-05-28"
+datePublished: "2022-06-06"
 author: "Charlie Wilkins"
-hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-hero_image_alt: "A close-up photograph of myself"
+hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/the-world-is-ugly/twiu.png"
+hero_image_alt: "A screenshot of The World is Ugly's home screen"
 hero_image_credit_text: "Image owned by me"
 hero_image_credit_link: "charliewilkins.tech"
-description: "An urban photography AR experience"
+description: "An urban photography AR excerise app"
 ---
 
 <h2>{_frontmatter.description}</h2>
 
-For my first portfolio entry, I thought I'd take a look at exactly how I built
-and deployed the site you are currently reading. Or, rather, how I build and
-deploy the website, since I frequently update it when I have the idea for a
-new feature or simply want a break from my more typical work as a student and
-back-end developer.
+<h3>
+TLDR: Users are encouraged to excerise and explore their local area, receiving
+cryptic prompts on their phone and having to take photographs based on the
+prompt to progress. Users who fail face a 'forfeit' wherein random images from
+their phone are texted to randomly selected contacts. An iPhone app created in
+Swift, which is backed by a Google Cloud C&C server implemented in NodeJS.
+<br />Created at HackNotts 2020, The World is Ugly recieved an overall second-place
+from the judges.
+</h3>
 
-As that implies, I don't have a background in web development. As such, I began
-by searching for a web framework that was modern, fast, and easy to get to
-grips with. [GatsbyJS](https://www.gatsbyjs.com/) seemed an obvious choice,
-especially since I anticipated the website containing primarily static content
-such as a blog and portfolio. The primary purpose of the website was to give me
-a space to archive and explain some of the many projects I've been a part of,
-as well as to share my thoughts on computing and technology. As such,
-simplicity seemed to be the order of the day.
+Our hackathon team, the Dream Team, had made our debut at HackNotts 2019 with
+Bulletproof Future, a critical and near-total failure that we quickly agreed
+never to bring up again*. Since then, however, we racked up the Best Hardware
+Hack award at ManMetHacks 2.0 for [Look Alive, Sunshine]()[TODO link] and Best
+Use of Google Cloud at CovHack 2020 for [Famous Last Words]()[TODO link].
+Returning to HackNotts for the (remotely-held) 2020 competition therefore, we
+wanted to do something to right our previous wrongs. The result was The World
+is Ugly, an impressive showcase of our collective skills which also has the
+distinction of being the most "serious" project we've yet completed, although
+there is still a touch of our trademark macabre humour.
+
+The World is Ugly was concieved as an excerise app that would encourage users
+to explore their local area, with integrated AR elements and a storyline that
+the user explored, with an elevator pitch of "Duolingo meets [Zombies, Run!]()"
+[TODO link]. A subversise spy in a dystopic world, the user would recieve cryptic
+commands from, well, Command, which would correspond to tasks the user would
+need to complete in the real world. Multiple tasks were planned, but the only
+one implemented was the taking of a photograph answering the "riddle" given
+to the user. Once a photograph was taken using the iPhone app, it would be
+uploaded to the system's Command & Control server, built using Google Cloud.
+GC's Vision platform allows the analysis of images by AI, which was used to
+determine whether or not the user had met their prompt.
 
 <img
-src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/headshot.png"
-alt="A close-up photograph of myself" />
+src="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/portfolio/portfolio/the-world-is-ugly/architecture.png"
+alt="The architecture of the project" 
+style="width:100%, max-width:480px"
+/>
 
-Constructing the website on my local machine indeed proved relatively simple.
-Gatsby proved a joy to work with, well documented and tutorialised, and easy
-even for an inexperienced JavaScript developer like myself.
+The most dramatic part of the app, however, came up if the user's submission
+was judged incorrect. A forfeit was needed, and our team never approached a
+task like this by half. Given that this time we were operating from a phone
+app, we could request access to a user's photos, and decided to use this to
+our advantage. Firstly, a random image would be selected from the user's phone.
+This would then be uploaded to the C&C server, and published to the Web.
+Using Twilio (remember them?), a randomly-selected contact from the user's
+phone would be texted a link to the photograph. It may have been innocuous, but
+it may not have been. Naturally, this was the kind of feature that would faced
+the axe were The World is Ugly to become a real product, but it suited our
+purposes of demonstrating our skills and amusing other hackathon attendees.
+
+In fact, it did more than amuse them. Backed by [a rather entertaining video demo]()[TODO link or host]
+(which arguably does a better job of explaining than I ever could), The World
+is Ugly picked up the Second Overall commendation at HackNotts 2020. As I've said,
+I have a real fondness for this project - it mixes various technologies to
+create an engaging and immersive experience that demonstrates various talents
+among the development team. Additionally, it's almost something that could one
+day be released to the public (or at least an early test for such), which is
+unusual for us. I had a great time building it as well!
+
+Repository available [on my public GitHub](https://github.com/BackstreetCultist/The-World-is-Ugly).
+Logos used property of their rightful owners, clip-art sourced from [https://publicdomainvectors.org/](https://publicdomainvectors.org/).
+
+\* Sorry, team.
