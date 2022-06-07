@@ -1,12 +1,75 @@
 ---
 title: "Quality Engineering at Scale"
 description: "Or, how I learned to stop worrying and love contract testing"
-datePublished: "2021-09-15"
+datePublished: "2022-06-07"
 author: "Charlie Wilkins"
 hero_image: "https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/images/bridge.png"
-hero_image_alt: "A photo of an ageing stone bridge under a grey sky"
+hero_image_alt: "A photo of an ageing but sturdy stone bridge under a grey sky"
 hero_image_credit_text: "Image owned by me"
 hero_image_credit_link: "charliewilkins.tech"
 ---
 
-Quality Engineering at Scale (Or, How I Learned to Stop Worrying and Love a Contract Test)
+Second blog post! I think I'm going to try and use my own photographs in these,
+something representative (and free) rather than specific (and copyrighted). I'm
+not a particularly good photographer, but I'm an enthusiastic amateur - this one
+was taken near the Cassley Falls in Sutherland, Scotland, on a two-week holiday
+I took during the six months I spent as a Quality Engineer at Capital One UK. And
+that's how you write a segue.
+
+I really enjoyed my first six months at Capital One, as a good old-fashioned
+backend software engineer*, but when it came time to transition to my second of
+the two planned six-month placements, I wanted a change. It wasn't that I wanted
+a change of language, but a change of role - I'd worked closely with the QEs in
+Nova Team, and become fascinated not just with the process of writing tests but
+of planning them, deciding exactly what needed testing and when, building the
+frameworks to execute them, and afterwards working out exactly what the results
+meant. Additionally, I'd recently completed my AWS Cloud Practitioner
+certification, and I was fascinated by how Capital One's vast cloud systems
+were architected. Quality Engineering therefore seemed the natural next step
+for me.
+
+I turned out to be in luck - there was an opening for a QE in a Java backend
+team similar to the one I was leaving, albeit tackling a very different area of
+the business. Purple Pandas were a relatively new outfit, formed around the
+time I'd joined the company as part of an effort to replace existing on-premise
+legacy systems with a network of new AWS microservices. This was a
+mission-critical system, a failure of which would be significantly damaging to
+the business. Quality control was naturally crucial.
+
+The effort was large enough to require four development teams, two for frontend
+and two for backend. In this "super-team" structure, QEs took on the role of
+go-betweens and almost formed a team in their own right, complete with weekly
+stand-ups where tasks would be handed out. This was supported by team managers,
+who accepted that QEs would require time for out-of-team work, and would rely
+on us to inform the rest of the team of decisions within the space of the wider
+project. I saw first-hand just how crucial this arrangement was to the success
+of the ongoing project, as this semi-formal inter-team network was highly
+effective at organising their own work, petitioning their teams to complete
+work other teams were relying on, and maintaining a wider view of the project,
+all the while also doing the day-to-day QE work of testing and pipeline
+maintenance. This is large-scale quality engineering done right: understanding
+that both the quality of individual pieces and the quality of the system as a
+whole are important, and making the correct decisions to improve both.
+
+All of this is a rather lofty way of saying that we carried out a *lot* of
+contract testing. The new system was being built in stages, meaning that each
+new service had to be both compatible with those around it *and* fully
+backwards-compatible with the legacy systems. API contracts became sacred
+documents and sources-of-truth - living documents, as the needs of the service
+changed, but only ever modified with cross-party consent. The involved teams
+placed a huge deal of trust in one another, and QEs and our tests were there to
+facilitate that trust.
+
+In another blog post, perhaps I'll talk more about the individual tests we
+wrote and how we approached them, but I'm not sure that was my most important
+take-away from my time in Purple Pandas. The project was still moving forwards
+when I left Capital One, far from complete, but in the six months I was there I
+saw the progress we made. I also saw how we made it - trust, I think, is the key
+word. Trust at every level - trust between developers and QEs within teams that
+each will carry out their duties, trust between teams facilitated by QEs that
+each team will complete their work, and trust between engineers and management
+that both sides will be permitted to make the correct decisions for the project.
+Quality engineering is the art of building trustworthy systems, and trustworthy
+systems are only built *by* trustworthy systems.
+
+\* There'll be a proper write-up at some point
