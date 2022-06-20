@@ -22,8 +22,10 @@ pieces of documentation for Capital One.
 <p>
 Aside from software engineering, I have a keen interest in music (I play frankly
 too many instruments, none very well), cooking, and science fiction movies and
-books. I fancy myself something of a science fiction writer myself, but only as
-a hobby.
+books. I even fancy myself something of a sci-fi writer, but only as a hobby.
+</p>
+<p>
+Feel free to get in touch with me by email at charlie@charliewilkins.tech, and <a href="https://s3.eu-west-2.amazonaws.com/charliewilkins.tech/documents/CV+CWilkins.pdf" download>click here to download my CV!</a>
 </p>
 </div>
 
