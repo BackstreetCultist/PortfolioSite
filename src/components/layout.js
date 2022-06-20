@@ -20,7 +20,7 @@ const Layout = ({ pageTitle, children }) => {
         <>
             <Helmet>
                 <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-                <html className={background} />
+                <html lang="en" className={background} />
                 <body className={background} />
             </Helmet>
             <div className={container}>
